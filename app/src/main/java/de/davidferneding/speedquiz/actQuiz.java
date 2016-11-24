@@ -18,11 +18,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.Timer;
 
 public class actQuiz extends Activity {
@@ -39,12 +41,18 @@ public class actQuiz extends Activity {
     public DatabaseHelper helper;
     public int anzahlRichtige = 0;
     private ArrayList<Antwort> antworten;
-    private  boolean keineNeueFrage;
+    private boolean keineNeueFrage;
+    private long startZeit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_quiz);
+
+        Calendar c = Calendar.getInstance();
+        c.setTimeZone(TimeZone.getDefault());
+        startZeit = c.getTimeInMillis();
+
         resizeButtons();
 
         keineNeueFrage = false;
@@ -125,8 +133,16 @@ public class actQuiz extends Activity {
     }
 
     private void getQuestion() {
-        if (keineNeueFrage)
-                return;
+        if (keineNeueFrage) {
+            Calendar c = Calendar.getInstance();
+            c.setTimeZone(TimeZone.getDefault());
+            Intent i = new Intent(actQuiz.this, actAuswertung.class);
+            startActivity(i);
+            actAuswertung.initialize(startZeit, c.getTimeInMillis(), anzahlRichtige, antworten.size());
+            actAuswertung.tabellenName = table;
+            finish();
+            return;
+        }
 
         String frage = "";
         String antwort1 = "";
@@ -156,9 +172,9 @@ public class actQuiz extends Activity {
         }
 
         antworten.add(new Antwort("", 0, 0));
-        if (antworten.size() == helper.rowcount(table))
+        if (antworten.size() == helper.rowcount(table) || antworten.size() == 10)
             keineNeueFrage = true;
-        
+
         currentquestion = helper.getSingleQuestion(table, nextValue + 1);
 
         frage = currentquestion.getFRAGE();

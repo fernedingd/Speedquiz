@@ -63,62 +63,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.close();
     }
 
-    private void addQuestions() {
-        Question q = new Question("Was ist die Hauptstadt von Frankreich?", "Berlin", "Rom", "Paris", "Madrid", 3);
-        this.addQuestion(q, TABLE_GEO);
-
-        q = new Question("Welcher Agent hat die \"Lizenz zum töten?\"", "Kingsmen", "Jason Bourne", "Ethan Hunt", "James Bond", 4);
-        this.addQuestion(q, TABLE_FIS);
-
-        q = new Question("Was ist die Landeshauptstadt von Bayern?", "Hamburg", "München", "Berlin", "Dresden", 2);
-        this.addQuestion(q, TABLE_GEO);
-
-        q = new Question("Welches Land hat nicht den Euro als Währung?", "Frankreich", "Portugal", "Schweiz", "Griechenland", 3);
-        this.addQuestion(q, TABLE_GEO);
-
-        q = new Question("", "bin\"", "kann\"", "darf\"", "weiß\"", 4);
-        this.addQuestion(q, TABLE_NAT);
-
-        q = new Question("Von wem handelt \"The Social Network\"?", "Mark Zuckerberg", "Bill Gates", "Steve Wozniak", "Henry Ford", 1);
-        this.addQuestion(q, TABLE_FIS);
-
-        q = new Question("Warum werden bestimmte Frequenzen als \"Ultraschall\" bezeichnet?", "Die Schallwellen sind besonders lang", "Sie liegen im nicht hörbaren Bereich", "Sie sind sehr lange zu hören", "Alle Antworten", 2);
-        this.addQuestion(q, TABLE_NAT);
-
-        q = new Question("Was ist die chemische Formel von Wasser?", "W", "HO(2)", "H(2)O", "Wa", 3);
-        this.addQuestion(q, TABLE_NAT);
-
-        q = new Question("Welches Organ produziert Insulin?", "Hirnanhangdrüse", "Galle", "Zwölffingerdarm", "Bauchspeicheldrüse", 4);
-        this.addQuestion(q, TABLE_MED);
-
-        q = new Question("In welchem Rythmus wird die Herz-Lungen-Wiederbelebung durchgeführt?", "30x Herzdruckmassage\n2x Beatmen", "2x Herzdruckmassage\n30x Beatmen", "15x Herzdruckmassage\n15x Beatmen", "Mit den Armen des Patienten über dem Körper wedeln", 1);
-        this.addQuestion(q, TABLE_MED);
-
-        q = new Question("Wo wird ein Wendl-Tubus eingeführt?", "Mund", "Nase", "Ohr", "Anus", 2);
-        this.addQuestion(q, TABLE_MED);
-
-        q = new Question("Wie viele Nieren hat ein normaler Mensch?", "2", "3", "1", "4", 3);
-        this.addQuestion(q, TABLE_MED);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_ALLG);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_ALLG);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_ALLG);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_ALLG);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_ALLG);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_ALLG);
-    }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_GEO);
@@ -185,5 +129,253 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             quest.setAW4(cursor.getString(6));
         }
         return quest;
+    }
+
+    private void addQuestions() {
+        Question q = new Question("Was ist die Hauptstadt von Frankreich?", "Berlin", "Rom", "Paris", "Madrid", 3);
+        this.addQuestion(q, TABLE_GEO);
+
+        q = new Question("Was ist die Landeshauptstadt von Bayern?", "Hamburg", "München", "Berlin", "Dresden", 2);
+        this.addQuestion(q, TABLE_GEO);
+
+        q = new Question("Welches Land hat nicht den Euro als Währung?", "Frankreich", "Portugal", "Schweiz", "Griechenland", 3);
+        this.addQuestion(q, TABLE_GEO);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+
+        q = new Question("Welcher Agent hat die \"Lizenz zum töten?\"", "Kingsmen", "Jason Bourne", "Ethan Hunt", "James Bond", 4);
+        this.addQuestion(q, TABLE_FIS);
+
+        q = new Question("Von wem handelt \"The Social Network\"?", "Mark Zuckerberg", "Bill Gates", "Steve Wozniak", "Henry Ford", 1);
+        this.addQuestion(q, TABLE_FIS);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+
+        q = new Question("Was ist Kochsalz?", "Natriumbromid", "Wasserstoffperoxid", "Kaliumchlorid", "Natriumchlorid", 4);
+        this.addQuestion(q, TABLE_NAT);
+
+        q = new Question("Warum werden bestimmte Frequenzen als \"Ultraschall\" bezeichnet?", "Die Schallwellen sind besonders lang", "Sie liegen im nicht hörbaren Bereich", "Sie sind sehr lange zu hören", "Alle Antworten", 2);
+        this.addQuestion(q, TABLE_NAT);
+
+        q = new Question("Was ist die chemische Formel von Wasser?", "W", "HO(2)", "H(2)O", "Wa", 3);
+        this.addQuestion(q, TABLE_NAT);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+
+        q = new Question("Welches Organ produziert Insulin?", "Hirnanhangdrüse", "Galle", "Zwölffingerdarm", "Bauchspeicheldrüse", 4);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("In welchem Rythmus wird die Herz-Lungen-Wiederbelebung durchgeführt?", "30x Herzdruckmassage\n2x Beatmen", "2x Herzdruckmassage\n30x Beatmen", "15x Herzdruckmassage\n15x Beatmen", "Mit den Armen des Patienten über dem Körper wedeln", 1);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wo wird ein Wendl-Tubus eingeführt?", "Mund", "Nase", "Ohr", "Anus", 2);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wie viele Nieren hat ein normaler Mensch?", "1", "3", "2", "4", 3);
+        this.addQuestion(q, TABLE_MED);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
+//        this.addQuestion(q, TABLE_);
+//
+//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
+//        this.addQuestion(q, TABLE_);
     }
 }
