@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class actThemenauswahl extends Activity {
 
@@ -18,7 +19,12 @@ public class actThemenauswahl extends Activity {
         Button btnMedizin = (Button) findViewById(R.id.btnMedizin);
         Button btnFilmSerien = (Button) findViewById(R.id.btnFilmSerien);
         Button btnNaturwissenschaften = (Button) findViewById(R.id.btnNaturwissenschaften);
-
+        TextView tvVersion = (TextView) findViewById(R.id.tvVersion);
+        try {
+            tvVersion.setText("Version: " + getPackageManager().getPackageInfo(getPackageName(), 0).versionName.toString());
+        } catch (Exception ex) {
+            //Wird nicht behandelt
+        }
         btnGeographie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

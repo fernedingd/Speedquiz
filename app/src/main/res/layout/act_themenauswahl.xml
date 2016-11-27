@@ -14,27 +14,40 @@
         android:id="@+id/btnGeographie"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Geographie"/>
+        android:text="Geographie"
+        android:backgroundTint="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btnMedizin"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/btnGeographie"
-        android:text="Medizin"/>
+        android:text="Medizin"
+        android:backgroundTint="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btnFilmSerien"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/btnMedizin"
-        android:text="Filme und Serien"/>
+        android:text="Filme und Serien"
+        android:backgroundTint="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btnNaturwissenschaften"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/btnFilmSerien"
-        android:text="Naturwissenschaften"/>
+        android:text="Naturwissenschaften"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Version: 1.0.0"/>
 
 </RelativeLayout>

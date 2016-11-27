@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     private static final String DATABASE_NAME = "fragenkatalog";
 
@@ -132,6 +132,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void addQuestions() {
+        //TODO: Fragen hinzufügen
+
+
         Question q = new Question("Was ist die Hauptstadt von Frankreich?", "Berlin", "Rom", "Paris", "Madrid", 3);
         this.addQuestion(q, TABLE_GEO);
 
@@ -311,71 +314,95 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         q = new Question("Wie viele Nieren hat ein normaler Mensch?", "1", "3", "2", "4", 3);
         this.addQuestion(q, TABLE_MED);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
-//
+
+        q = new Question("Was ist der Standardrettungsgriff um bewusstlose Personen alleine zu transportieren?", "Huckepack", "Schultern", "Rautek-Rettungsgriff", "Es gibt keinen", 3);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wozu dient ein \"Bodycheck\"?", "Kampfunfähig machen eines Patienten", "Zeitvertreib beim Warten auf den Rettungsdienst", "Musterung von Rekruten", "Feststellen nicht sichtbarer Verletzungen", 4);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist die Rettungskette?", "Ablauf einer Notfallrettung", "Rettungswerkzeug", "Verdienstorden", "Schmuck", 1);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Das Nervensystem gliedert sich in zwei Teile. Welche?", "Direktes und indirektes", "Zentrales und peripheres", "Aktives und passives", "Großes und kleines", 2);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist im Großhirn lokalisiert?", "Feinsteuerung von Bewegungen", "Kontrolle des Nervensystems", "Bewusstsein", "Alle vorigen", 3);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist die Anamnese?", "Chemische Prozesse auf Zellebene", "Auslösen des Atemreflexes", "Stationäre Behandlung", "Erhebung von Unfallinformationen", 4);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist der Fachbegriff für den Rachen?", "Pharynx", "Trachea", "Pulmo", "Larynx", 1);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist der Fachbegriff für die Luftröhre?", "Pharynx", "Trachea", "Pulmo", "Larynx", 2);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist der Fachbegriff für die Lunge?", "Pharynx", "Trachea", "Pulmo", "Larynx", 3);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist der Fachbegriff für den Kehlkopf", "Pharynx", "Trachea", "Pulmo", "Larynx", 4);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Welches Atemzugvolumen ist falsch?", "750ml | Erwachsener", "350ml | Jugendlicher", "150ml | Kleinkind", "20ml | Neugeborener", 1);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wo liegt das Herz (horizontale Verschiebung)?", "Links", "Mittig", "Rechts", "Unterschiedlich", 2);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wie nennt man den Am Handgelenk gemessenen Puls?", "Puls", "Carotispuls", "Radialispuls", "Brachialispuls", 3);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Wo wird bei Kindern der Puls gemessen?", "Handgelenk", "Fußknöchel", "Hals", "Achselhöhle", 4);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("In welcher Einheit wird der Blutdruck angegeben?", "mmHg", "bar", "Pascal", "atm", 1);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist bei Angina pectoris anders als bei einem Herzinfakt?", "Es besteht keine akute Gefahr", "Das Blutgefäß ist nicht vollständig verschlossen", "Der Patient spürt es nicht", "Das Herz ist nicht betroffen", 2);
+        this.addQuestion(q, TABLE_MED);
+
+        q = new Question("Was ist ein Zeichen für eine Herzinsuffizienz?", "Sehr schneller Puls", "Sehr langsamer Puls", "Beides", "Keins der beiden", 3);
+        this.addQuestion(q, TABLE_MED);
+
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
 //
 //        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 1);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 2);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 3);
-//        this.addQuestion(q, TABLE_);
-//
-//        q = new Question("Frage", "Antwort", "Antwort", "Antwort", "Antwort", 4);
-//        this.addQuestion(q, TABLE_);
+//        this.addQuestion(q, TABLE_MED);
     }
 }

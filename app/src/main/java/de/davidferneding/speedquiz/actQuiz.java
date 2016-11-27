@@ -137,8 +137,11 @@ public class actQuiz extends Activity {
             Calendar c = Calendar.getInstance();
             c.setTimeZone(TimeZone.getDefault());
             Intent i = new Intent(actQuiz.this, actAuswertung.class);
+            i.putExtra("startZeit", startZeit);
+            i.putExtra("endZeit", c.getTimeInMillis());
+            i.putExtra("richtige", anzahlRichtige);
+            i.putExtra("fragen", antworten.size());
             startActivity(i);
-            actAuswertung.initialize(startZeit, c.getTimeInMillis(), anzahlRichtige, antworten.size());
             actAuswertung.tabellenName = table;
             finish();
             return;

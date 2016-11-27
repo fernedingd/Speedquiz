@@ -14,26 +14,24 @@ import de.davidferneding.speedquiz.Time;
 
 public class actAuswertung extends Activity {
     public static String tabellenName;
-    private static int richtwert;
-    private static long zeitInMillis;
-    private static int richtige;
-    private static int fragen;
-    private static long punkte;
-    private static double faktor;
+    private int richtwert;
+    private long zeitInMillis;
+    private int richtige;
+    private int fragen;
+    private long punkte;
+    private double faktor;
     private long highscore;
-
-    public static void initialize(long startzeit, long endzeit, int anzahlRichtige, int anzahlFragen) {
-        zeitInMillis = endzeit - startzeit;
-        richtige = anzahlRichtige;
-        fragen = anzahlFragen;
-        faktor = (double) anzahlRichtige / anzahlFragen;
-        richtwert = (int) (30000 * ((double) anzahlFragen / 10));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auswertung);
+
+        zeitInMillis = getIntent().getLongExtra("endZeit", 0) - getIntent().getLongExtra("startZeit", 0);
+        richtige = getIntent().getIntExtra("richtige", 0);
+        fragen = getIntent().getIntExtra("fragen", 0);
+        faktor = (double) richtige / fragen;
+        richtwert = (int) (30000 * ((double) fragen / 10));
 
         SharedPreferences prefs = this.getSharedPreferences("highscores", Context.MODE_PRIVATE);
         highscore = prefs.getLong("highscore_" + tabellenName, 0);
@@ -52,6 +50,8 @@ public class actAuswertung extends Activity {
             punkte = (long) ((200 / 3) - (400 / 3) * zeitDurchRec);
         }
         punkte *= faktor;
+        if (punkte < 0)
+            punkte = 0;
 
         TextView tvErgebnis = (TextView) findViewById(R.id.tvErgebnis);
         if (punkte > highscore) {
